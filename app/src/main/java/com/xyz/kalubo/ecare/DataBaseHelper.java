@@ -2,6 +2,7 @@ package com.xyz.kalubo.ecare;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -45,5 +46,24 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         else
             return true;
 
+    }
+
+
+    //for login activity
+    public boolean checkUser(String email,String password){
+
+        String[] columns = { COL_1 };
+        SQLiteDatabase db = getReadableDatabase();
+        String selection = COL_3 + "=?" + " and " + COL_4 + "=?";
+        String[] selectionArgs = {email,password};
+        Cursor cursor = db.query(TABLE_NAME,columns,selection,selectionArgs,null,null,null);
+        int count = cursor.getCount();
+        cursor.close();
+        db.close();
+
+        if(count > 0)
+            return true;
+        else
+            return false;
     }
 }
