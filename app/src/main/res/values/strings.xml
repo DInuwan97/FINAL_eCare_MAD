@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">eCare</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="password">Password</string>
+    <string name="your_email">Your Email</string>
+    <string name="your_name">Your Name</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="follow_us_on">Follow us on</string>
+</resources>
