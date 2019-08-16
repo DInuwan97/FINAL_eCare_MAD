@@ -2,6 +2,7 @@ package com.xyz.kalubo.ecare;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -38,9 +39,11 @@ public class SignInActivity extends AppCompatActivity {
                 Boolean res = db.checkUser(user_email,user_password);
 
                 if(res == true){
-                    Toast.makeText(SignInActivity.this,"Successfullt Logged In!!!",Toast.LENGTH_SHORT).show();
+//                    Intent intent = new Intent(SignInActivity.this,NavigationDrawerHome.class);
+//                    startActivity(intent);
+                    Toast.makeText(SignInActivity.this,"Successfully Logged In!!!",Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(SignInActivity.this,"Invalid Emial or Password!!!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignInActivity.this,"Invalid Email or Password!!!",Toast.LENGTH_SHORT).show();
                 }
 
             }
